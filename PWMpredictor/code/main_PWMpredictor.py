@@ -11,7 +11,7 @@ def user_input():
 #    parser.add_argument('-lr', '--learning_rate', help='learning rate of adam optimizer', type=float, required=True)
 #    parser.add_argument('-e', '--epochs', help='number of epochs', type=int, required=True)
 #    parser.add_argument('-res_num', '--residual_num', help='number of residuals to use', type=int, required=True)
-#    parser.add_argument('-r', '--run_gpu', help='equal 1 if should run on gpu', type=int, required=True)
+    parser.add_argument('-r', '--run_gpu', help='equal 1 if should run on gpu', type=int, required=True)
 #    parser.add_argument('-t_v', '--transfer_version', help='last_layer or retrain', type=str, required=True)
 #    parser.add_argument('-ac_x', '--amino_acid_x', help='use b1h data with amino acid x', type=str, required=True)
     parser.add_argument('-in', '--input_file', help='input zinc finger file', type=str, required=True)
@@ -24,19 +24,19 @@ def user_input():
 
 
 def main(args):
-#    if args["run_gpu"] == 1:
-#        gpus = tf.config.experimental.list_physical_devices('GPU')
-#        if gpus:
-#            try:
-#                for gpu in gpus:
-#                    tf.config.experimental.set_memory_growth(gpu, True)
-#            except RuntimeError as e:
-#                print(e)
-#    else:
-#        # force the server to run on cpu and not on Gpu
-#        import os
-#        os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # see issue #152
-#        os.environ["CUDA_VISIBLE_DEVICES"] = ""
+    if args["run_gpu"] == 1:
+        gpus = tf.config.experimental.list_physical_devices('GPU')
+        if gpus:
+            try:
+                for gpu in gpus:
+                    tf.config.experimental.set_memory_growth(gpu, True)
+            except RuntimeError as e:
+                print(e)
+    else:
+        # force the server to run on cpu and not on Gpu
+        import os
+        os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # see issue #152
+        os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 #    main_path = args['data_folder_address']
 #    c_rc_df = pd.read_csv(main_path + 'c_rc_df.csv', sep=' ')
