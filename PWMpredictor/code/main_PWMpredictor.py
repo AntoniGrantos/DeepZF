@@ -36,7 +36,7 @@ def main(args):
         # force the server to run on cpu and not on Gpu
         import os
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # see issue #152
-        os.environ["CUDA_VISIBLE_DEVICES"] = ""
+        os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 #    main_path = args['data_folder_address']
 #    c_rc_df = pd.read_csv(main_path + 'c_rc_df.csv', sep=' ')
