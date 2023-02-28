@@ -41,7 +41,7 @@ def main(args):
 #    main_path = args['data_folder_address']
 #    c_rc_df = pd.read_csv(main_path + 'c_rc_df.csv', sep=' ')
 #    zf_pred_df = pd.read_csv(main_path + args['pred_zf_df'], sep=' ')
-    c_rc_df = pd.read_csv(args['input_file'], sep=',')
+    c_rc_df = pd.read_csv(args['input_file'], sep=' ')
 
 #    if args["residual_num"] == 12:
 #        b1h_one_hot = np.load(main_path + 'onehot_encoding_b1h_12res.npy')
