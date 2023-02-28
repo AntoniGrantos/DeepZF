@@ -23,11 +23,11 @@ cat x?? > model.p
 
 Run under BindZFpredictor/code dir:
 ```
-python3.6 main_bindzfpredictor_predict.py -in <input_file> -out <output_file> -m model.p -e encoder.p -r <gpu-0/1>
+python3.9 main_bindzfpredictor_predict.py -in <input_file> -out <output_file> -m model.p -e encoder.p -r <gpu-0/1>
 ```
 Example:
 ```
-python3.6 main_bindzfpredictor_predict.py -in 40_zf_40_b.csv -out results.tsv -m model.p -e encoder.p -r 1
+python3.9 main_bindzfpredictor_predict.py -in 40_zf_40_b.csv -out results.tsv -m model.p -e encoder.p -r 1
 ```
 
 Note that you will need to identify the zinc fingers according to the regular expression by yourself. Then, append each finger by its adajcent 40aa residues on each side, and proive them as input to the command line above to obtain their DNA-binding probabilities.
@@ -83,11 +83,11 @@ python3.6 create_zf_pred_df_and_cal_auc.py -p_add path/to/predicted ZF -m_p path
 
 Run under PWMpredictor/code dir:
 ```
-python3.6 main_PWMpredictor.py -in <input_file> -out <output_file> -m <model_file>
+python3.9 main_PWMpredictor.py -in <input_file> -out <output_file> -m <model_file>
 ```
 Example:
 ```
-python3.6 main_bindzfpredictor_predict.py -in ../../Data/PWMpredictor/c_rc_df.csv -out predictions.txt -m transfer_model.h5
+python3.9 main_PWMpredictor.py -in ../../Data/PWMpredictor/c_rc_df.csv -out predictions.txt -m transfer_model.h5
 ```
 
 ### Training PWMpredictor
